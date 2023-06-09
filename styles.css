@@ -28,11 +28,6 @@ body {
     font-size: 16px; /* Default font size for non-mobile devices */
 }
 
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-  .uni {
-    font-size: 13px; /* Adjust the font size for mobile devices */
-  }
 
   #interests {
     display: flex;
@@ -90,5 +85,8 @@ body {
         .picture-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+        .uni {
+          font-size: 13px; /* Adjust the font size for mobile devices */
+        }
       }
-    }
+    
