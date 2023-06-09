@@ -28,8 +28,8 @@ body {
     font-size: 16px; /* Default font size for non-mobile devices */
 
     /* Media query for mobile devices */
-    @media (max-width: 767px) {
-        font-size: 14px; /* Adjust the font size for mobile devices */
+    @media (max-width: 768px) {
+        font-size: 13px; /* Adjust the font size for mobile devices */
     }
 }
 
