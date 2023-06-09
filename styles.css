@@ -1,5 +1,10 @@
+. {
+    margin: auto;
+}
 body {
-    font-family: monospace;
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
   }
 
   #name-uni {
@@ -30,7 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 200vh;
   }
 
   #interests ul {
@@ -39,23 +44,45 @@ body {
     list-style: none; 
   }
 
-  #interests p {
-    font-size: 16px;
+  #picture-section .visuals {
+    text-align: center;
+    padding-bottom: 50px;
   }
+  
+  
+.picture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
 
-  #picture-section {
-    padding: 20px; /* Adjust the padding as needed */
-  }
-  
-  .picture-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0; /* Remove the gap between images */
-  }
-  
-  .picture-grid img {
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    object-fit: cover;
-  }
+.picture-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#circle-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px; /* Adjust the width to your desired size */
+  height: 800px; /* Adjust the height to your desired size */
+  z-index: -1;
+}
+
+      /* Responsive sizes*/
+      @media (max-width: 768px) {
+        #circle-image {
+          width: 100%;
+          height: auto;
+        }
+        .picture-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
