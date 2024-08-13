@@ -1,55 +1,76 @@
 body {
-    font-family: Helvetica;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  #name-uni {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Adjust the height as needed */
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+#name-uni {
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh; /* Ensure it covers full viewport height */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  .name {
-    text-align: center;
-    font-size: 16px;
-  }
+.name {
+  text-align: center;
+  font-size: 16px;
+}
 
+.uni {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
   .uni {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 16px; /* Default font size for non-mobile devices */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 14px; /* Adjust the font size as needed */
+  }
 }
 
 
-  #interests {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 200vh;
-    margin-top: -600px; /* Move the list up by reducing top margin */
-  }
+#about-me,
+#interests,
+#readings,
+#resources {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 20px; /* Use padding for spacing instead of large margins */
+  margin: 0 400px;
+}
 
-  #interests ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none; 
-  }
+#about-me-list,
+#interests ul,
+#readings ul,
+#resources ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
 
-  #picture-section .visuals {
-    text-align: center;
-    padding-bottom: 50px;
-  }
-  
-  
+#readings ul li,
+#resources ul li{
+  margin-bottom: 10px; /* Adjust the value as needed */
+}
+
+
+#picture-section .visuals {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
 .picture-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -72,22 +93,27 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 800px; /* Adjust the width to your desired size */
-  height: 800px; /* Adjust the height to your desired size */
+  width: 800px;
+  height: 800px;
   z-index: -1;
 }
 
-      /* Responsive sizes*/
-      @media (max-width: 768px) {
-        #circle-image {
-          width: 100%;
-          height: auto;
-        }
-        .picture-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .uni {
-          font-size: 13px; /* Adjust the font size for mobile devices */
-        }
-      }
-    
+/* Responsive sizes */
+@media (max-width: 768px) {
+  #circle-image {
+    width: 100%;
+    height: auto;
+  }
+  .picture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .uni {
+    font-size: 13px;
+  }
+  #about-me,
+  #interests,
+  #readings,
+  #resources {
+    margin: 0 20px;
+  }
+}
