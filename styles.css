@@ -21,6 +21,12 @@ body {
   font-size: 16px;
 }
 
+.resume-holder {
+  text-align: center;
+
+
+}
+
 .uni {
   white-space: nowrap;
   overflow: hidden;
